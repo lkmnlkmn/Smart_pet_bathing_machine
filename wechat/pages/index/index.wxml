@@ -1,0 +1,57 @@
+
+<view class="titlea">连接阿里云</view>
+<view class="login-box" bindsubmit='loginForm'>
+    <view class="title">输入三要素</view>
+    <view class="pK">productKey</view>
+    <input bindinput="inputCom1" value='{{a}}' placeholder="请输入productKey"/>
+    <view class="dN">deviceName</view>
+    <input bindinput="inputCom2" value='{{b}}' placeholder="请输入deviceName"/>
+    <view class="dS">deviceSecret</view>
+    <input bindinput="inputCom3" value='{{c}}' placeholder="请输入deviceSecret"/>
+    <button class="login-btn1" bindtap="onconnect">立即连接</button>
+</view>
+
+<view class="topic-box">
+    <view class="title2">输入订阅链接</view>
+    <input bindinput="inputCom4" value='{{d}}' placeholder="请输入订阅链接"/>
+    <button class="login-btn2" bindtap="ontopic">订阅</button>
+</view>
+<view class="title3">设置水温阈值</view>
+
+<view class="tempchoose">
+    <view>
+        <radio-group class="dxk" bindchange="bandleChange">
+            <radio color="green" value="1" > 32~34℃</radio>
+            <radio color="green" value="2"> 34~36℃</radio>
+            <radio color="green" value="3"> 36~38℃</radio>
+        </radio-group>
+        <view>您选中的是:{{ mode }}</view>
+    </view>
+    <view>
+        <button class="btn" type="submit" bindtap="onClicktemp">提交</button>
+    </view>
+</view>
+
+<view class="title4">状态</view>
+
+    <view class="station">
+        <view class="water">
+            <view class="tm">水温：\n {{temperature}}℃</view>
+        </view>
+        <view class="workstation">
+            <view class="tm">运行状态：\n {{state}}</view>
+        </view>
+    </view>
+    <view class="station2">
+        <view class="work">
+            <view class="st">{{sta1}}</view>
+            <view class="ti">时间：{{time1}}</view>
+            <button class="login-btn3" bindtap="ontempopen" >加热</button>  
+        </view>
+        <view class="work">
+            <view class="pK">{{sta2}}</view>
+            <view class="pK">时间：{{time2}}</view>
+            <button class="login-btn3" bindtap="onworkopen" >清洗</button>
+        </view>
+</view>
+
