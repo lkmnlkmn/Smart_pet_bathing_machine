@@ -1,0 +1,51 @@
+var data = payload("json");
+ 
+var select = {};
+
+select.put("temperature", getOrNull(data,"temperature"));
+select.put("state", getOrNull(data,"state"));
+select.put("sta1", getOrNull(data,"sta1"));
+select.put("sta2", getOrNull(data,"sta2"));
+
+
+var connect=getOrNull(data,"connect");
+ 
+data.putAll(select);
+ 
+if (connect=="connect_W") {
+    writeIotTopic(1004, "/hr096uOcG77/connect_W/user/topic", select);
+}
+
+微信转入阿里云后进行解析
+
+var data = payload("json");
+ 
+var select = {};
+
+var cmd=getOrNull(data,"cmd");
+
+if(cmd=="tempmin"){
+select.put("tempmin", getOrNull(data,"datad"));
+}
+
+if(cmd=="tempmax"){
+select.put("tempmax", getOrNull(data,"datad"));
+}
+
+if(cmd=="tempopen"){
+select.put("tempopen", getOrNull(data,"datad"));
+}
+
+if(cmd=="workopen"){
+select.put("workopen", getOrNull(data,"datad"));
+}
+
+var connect=getOrNull(data,"connect");
+ 
+data.putAll(select);
+ 
+if (connect=="connect_A") {
+    writeIotTopic(1004, "/hr096uOcG77/connect_A/user/topic", select);
+}
+
+stm32转入阿里云后进行解析
