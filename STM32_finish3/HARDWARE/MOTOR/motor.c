@@ -1,0 +1,30 @@
+/**
+  ******************************************************************************
+  * @file    xxx.h
+  * @author  ljd
+  * @date    2023/4/3
+  * @brief   xxx驱动
+  * @UpdateTime   2023/4/3   ljd
+  ******************************************************************************
+*/ 
+#include "motor.h"
+#include "stm32f10x.h"
+
+/*电机初始化*/
+void MOTOR_Init(void){
+
+GPIO_InitTypeDef  GPIO_InitStructure;
+ 	
+ RCC_APB2PeriphClockCmd(M1_GPIO_CLK|M2_GPIO_CLK,ENABLE);	 //使能PB,PE端口时钟
+	
+ GPIO_InitStructure.GPIO_Pin = PINM1;				 //MOTOR1 端口配置
+ GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 		 //推挽输出
+ GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IO口速度为50MHz
+ GPIO_Init(GPIOM1, &GPIO_InitStructure);					 //根据设定参数初始化
+ M1_OFF;					  //关闭电机1
+
+ GPIO_InitStructure.GPIO_Pin = PINM2 ;	    		 //MOTOR2 端口配置, 推挽输出
+ GPIO_Init(GPIOM2, &GPIO_InitStructure);	  				 //推挽输出 ，IO口速度为50MHz
+ M2_OFF;						 //关闭电机2
+	
+}
