@@ -1,2 +1,2 @@
-# Smart_pet_bathing_machine
-智能宠物洗澡机 毕业设计 其中采用微信小程序和stm32设计 以及阿里云的转流
+# Smart_pet_bathing_machine_stm32
+关于stm32软件部分，其中包括了串口通信，i2c，实现的功能是进行gpio的开关控制以及温度检测，并且通过wifi模块与阿里云连接通信
