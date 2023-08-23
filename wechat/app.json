@@ -1,0 +1,17 @@
+{
+    "pages": [
+        
+        "pages/index/index",
+        "pages/logs/logs"
+        
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "宠物洗澡机",
+        "navigationBarTextStyle": "black"
+    },
+    
+
+    "sitemapLocation": "sitemap.json"
+}

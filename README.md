@@ -1,2 +1,4 @@
-# Smart_pet_bathing_machine_stm32
+# Smart_pet_bathing_machine_wechat_stm32
+智能宠物洗澡机微信端，主要是界面显示以及与阿里云的连接，并且只做了两个计时器
+# Smart_pet_bathing_machine_wechat_wechat
 关于stm32软件部分，其中包括了串口通信，i2c，实现的功能是进行gpio的开关控制以及温度检测，并且通过wifi模块与阿里云连接通信
